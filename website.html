@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Meme Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .meme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .meme-card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .meme-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .meme-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .meme-placeholder {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .social-links a {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#memes">Memes</a>
+        <a href="#about">About Me</a>
+    </nav>
+
+    <div class="container">
+        <section id="home" class="hero">
+            <h1>🎮 Welcome to My Page 🎮</h1>
+            <p>Your one-stop destination for memes and vibes</p>
+        </section>
+
+        <section id="memes">
+            <h2>🔥 Dank Memes Collection 🔥</h2>
+            <div class="meme-grid">
+                <div class="meme-card">
+                    <div class="meme-placeholder">😂</div>
+                    <h3>Epic Meme #1</h3>
+                    <p>When the squad is online</p>
+                </div>
+                <div class="meme-card">
+                    <div class="meme-placeholder">💀</div>
+                    <h3>Epic Meme #2</h3>
+                    <p>POV: It's 3 AM</p>
+                </div>
+                <div class="meme-card">
+                    <div class="meme-placeholder">🗿</div>
+                    <h3>Epic Meme #3</h3>
+                    <p>The vibes are immaculate</p>
+                </div>
+                <div class="meme-card">
+                    <div class="meme-placeholder">🚀</div>
+                    <h3>Epic Meme #4</h3>
+                    <p>To the moon!</p>
+                </div>
+                <div class="meme-card">
+                    <div class="meme-placeholder">⚡</div>
+                    <h3>Epic Meme #5</h3>
+                    <p>Speed run life</p>
+                </div>
+                <div class="meme-card">
+                    <div class="meme-placeholder">🎯</div>
+                    <h3>Epic Meme #6</h3>
+                    <p>No cap detected</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>📌 About Me</h2>
+            <div class="about-content">
+                <div class="profile-pic">🎮</div>
+                <div class="about-text">
+                    <p>Hey there! I'm a meme enthusiast and Discord legend. Welcome to my corner of the internet where I share my favorite memes and vibes.</p>
+                    <p>When I'm not scrolling through memes, you can find me gaming, chilling with friends, or discovering the next viral trend.</p>
+                    <p>Feel free to hang out and enjoy the content!</p>
+                    <div class="social-links">
+                        <a href="#">Discord</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
