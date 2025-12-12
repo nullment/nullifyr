@@ -45,52 +45,19 @@
 			<script src="assets/js/main.js"></script>
 		
 		<!-- Music -->
-		<div class="music-player">
-			<audio id="bgMusic" loop>
-				<source src="music/dragpath.mp3" type="audio/mpeg">
-			</audio>
-			<button id="musicToggle" onclick="toggleMusic()">
-				🔊 Play Music
-			</button>
-		</div>
+		<<audio id="bgMusic" loop>
+			<source src="music/dragpath.mp3" type="audio/mpeg">
+		</audio>
 
 		<script>
-		function toggleMusic() {
+		// Start music on first user interaction
+		document.addEventListener('click', function() {
 			var music = document.getElementById('bgMusic');
-			var button = document.getElementById('musicToggle');
-			
 			if (music.paused) {
 				music.play();
-				button.innerHTML = '🔇 Pause Music';
-			} else {
-				music.pause();
-				button.innerHTML = '🔊 Play Music';
 			}
-		}
+		}, { once: true });
 		</script>
-
-		<style>
-		.music-player {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			z-index: 1000;
-		}
-
-		#musicToggle {
-			background: rgba(255, 255, 255, 0.1);
-			border: 2px solid rgba(255, 255, 255, 0.5);
-			color: white;
-			padding: 0px 20px;
-			cursor: pointer;
-			border-radius: 5px;
-		}
-
-		#musicToggle:hover {
-			background: rgba(255, 255, 255, 0.2);
-		}
-		
-		</style>
 
 	</body>
 </html>
