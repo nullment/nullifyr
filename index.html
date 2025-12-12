@@ -44,10 +44,20 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 		
-		<!-- Music -->
-		<audio id="bgMusic" loop autoplay>
+		<!-- Background Music -->
+		<audio id="bgMusic" loop>
 			<source src="music/dragpath.mp3" type="audio/mpeg">
 		</audio>
+
+		<script>
+		// Start music on first user interaction
+		document.addEventListener('click', function() {
+			var music = document.getElementById('bgMusic');
+			if (music.paused) {
+				music.play();
+			}
+		}, { once: true });
+		</script>
 
 	</body>
 </html>
